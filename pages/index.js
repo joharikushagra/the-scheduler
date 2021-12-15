@@ -34,12 +34,12 @@ export default function Home() {
                         >
                           #
                         </th>
-                        <th
+                        {/* <th
                           scope="col"
                           className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
                           Candidate
-                        </th>
+                        </th> */}
                         <th
                           scope="col"
                           className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
@@ -74,9 +74,9 @@ export default function Home() {
                               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                 {index + 1}
                               </td>
-                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                              {/* <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                 {d.candidate}
-                              </td>
+                              </td> */}
                               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                 {new Date(d.startTime).toLocaleDateString()}
                               </td>
@@ -124,29 +124,6 @@ export default function Home() {
                   "
             >
               <span className="mr-2 uppercase">Create</span>
-            </button>
-          </Link>
-          <Link href="/update">
-            <button
-              className="
-                  flex
-                  mt-6
-                  items-center
-                  justify-center
-                  focus:outline-none
-                  text-white text-sm
-                  sm:text-base
-                  bg-blue-500
-                  hover:bg-blue-600
-                  rounded-2xl
-                  py-2
-                  w-full
-                  transition
-                  duration-150
-                  ease-in
-                  "
-            >
-              <span className="mr-2 uppercase">Update</span>
             </button>
           </Link>
         </div>

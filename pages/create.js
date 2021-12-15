@@ -41,6 +41,7 @@ function Create() {
         ...prevErrors,
         `You must provide atleast 2 candiate emails.`,
       ]);
+      return;
     }
 
     for (let email of emails) {
@@ -49,6 +50,7 @@ function Create() {
           ...prevErrors,
           `${email} is not a valid email`,
         ]);
+        return;
       }
     }
     if (endTime - startTime <= 0) {
@@ -56,6 +58,7 @@ function Create() {
         ...prevErrors,
         `End Time must be greater than start time.`,
       ]);
+      return;
     }
 
     // Request to backend APIs
@@ -74,8 +77,13 @@ function Create() {
         body: JSON.stringify(body),
       });
       const json = await data.json();
+
+      if (json.success) alert(json.message);
+      else alert(json.message);
+      window.history.back();
     } catch (error) {
-      console.log(error.statusText);
+      alert(error.message);
+      window.history.back();
     }
   };
 
