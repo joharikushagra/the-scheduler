@@ -10,7 +10,7 @@ const UserSchema = new mongoose.Schema({
         required: ['Email is required.'],
         unique: ['Email already exists.']
     },
-    interviews: [],
+    interviews: [{type: mongoose.Types.ObjectId, ref: "Interview"}],
 });
 
 export default mongoose.models.User || mongoose.model('User', UserSchema);

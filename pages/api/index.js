@@ -15,7 +15,7 @@ export default async function handler(req, res) {
       try {
         await getAllInterviews(req, res);
       } catch (error) {
-        res.json({ success: false, error: "eeeeeeerrrr" });
+        res.json({ success: false, error: error.message });
       }
       break;
     case "POST":

@@ -1,9 +1,13 @@
 import mongoose, { Schema } from 'mongoose';
 
 const InterviewSchema = new Schema({
+    // user: {
+    //     type: mongoose.Types.ObjectId,
+    //     ref: 'user',
+    //     required: ['Candidate could not be empty.']
+    // },
     candidate: {
-        type: String,
-        required: ['Candidate email could not be empty.']
+        type: String
     },
     startTime: {
         type: Number,

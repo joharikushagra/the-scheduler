@@ -22,74 +22,85 @@ export default function Home() {
         <h1 className="text-4xl mb-4 font-bold">All Upcoming interviews</h1>
         {data.length > 0 ? (
           <div className="flex flex-col">
-          <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-              <div className="overflow-hidden">
-                <table className="min-w-full">
-                  <thead className="bg-white border-b">
-                    <tr>
-                      <th
-                        scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                      >
-                        #
-                      </th>
-                      <th
-                        scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                      >
-                        Candidate
-                      </th>
-                      <th
-                        scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                      >
-                        Date
-                      </th>
-                      <th
-                        scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                      >
-                        Start Time
-                      </th>
-                      <th
-                        scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                      >
-                        End Time
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data.length &&
-                      data.map((d, index) => {
-                        return (
-                          <tr className="bg-gray-100 border-b" key={index}>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                              {index + 1}
-                            </td>
-                            <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                              {d.candidate}
-                            </td>
-                            <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                              {new Date(d.startTime).toLocaleDateString()}
-                            </td>
-                            <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                              {new Date(d.startTime).toLocaleTimeString()}
-                            </td>
-                            <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                              {new Date(d.endTime).toLocaleTimeString()}
-                            </td>
-                          </tr>
-                        );
-                      })}
-                  </tbody>
-                </table>
+            <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                <div className="overflow-hidden">
+                  <table className="min-w-full">
+                    <thead className="bg-white border-b">
+                      <tr>
+                        <th
+                          scope="col"
+                          className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        >
+                          #
+                        </th>
+                        <th
+                          scope="col"
+                          className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        >
+                          Candidate
+                        </th>
+                        <th
+                          scope="col"
+                          className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        >
+                          Date
+                        </th>
+                        <th
+                          scope="col"
+                          className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        >
+                          Start Time
+                        </th>
+                        <th
+                          scope="col"
+                          className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        >
+                          End Time
+                        </th>
+                        <th
+                          scope="col"
+                          className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        >
+                          Action
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {data.length &&
+                        data.map((d, index) => {
+                          return (
+                            <tr className="bg-gray-100 border-b" key={index}>
+                              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                {index + 1}
+                              </td>
+                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                {d.candidate}
+                              </td>
+                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                {new Date(d.startTime).toLocaleDateString()}
+                              </td>
+                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                {new Date(d.startTime).toLocaleTimeString()}
+                              </td>
+                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                {new Date(d.endTime).toLocaleTimeString()}
+                              </td>
+                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                <Link href={`/edit/${d._id}`}>Update</Link>
+                              </td>
+                            </tr>
+                          );
+                        })}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        ) : <p>Loading...</p>}
+        ) : (
+          <p>Loading...</p>
+        )}
 
         <div className="py-12 w-36">
           <Link href="/create">
@@ -143,3 +154,4 @@ export default function Home() {
     </div>
   );
 }
+
