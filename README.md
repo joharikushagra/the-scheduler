@@ -1,18 +1,39 @@
-# Next.js + Tailwind CSS Example
+# Interview-Scheduler
+This is a full-stack demo app for interview schedules management system built on Next JS/tailwind + Next APIs. This app would let you create interviews of more than one person and would also notify you if any person in the group is unavailable in the entered slot 😎.
+You can also update a particular interview's time slot with above mentioned validation. 
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+## Pages
 
-## Preview
+```
+/ - all interviews page
+```
+![interviews-page](https://user-images.githubusercontent.com/57484457/146258210-6e583ff3-c098-4934-a7bc-41dee6d201a5.png)
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+```
+/create - create a new interview schedule
+```
+![create](https://user-images.githubusercontent.com/57484457/146258222-f6a1f915-6f1b-4946-8f16-cec4dfb583e5.png)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+```
+/update/[id] - update an interview schedule
+```
+![update](https://user-images.githubusercontent.com/57484457/146258235-a162672e-fd89-43eb-ae65-b912eff55568.png)
 
-## Deploy your own
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+## Get Started
+Maintain a .env file and maintain your MongoDB URI as follows - 
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+```
+MONGODB_URI = <your mongoDB uri>
+```
+
+Run the following command on your terminal -
+
+```
+yarn dev
+```
+
+You are good to go!! ✈️
 
 ## How to use
 
