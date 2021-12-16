@@ -33,6 +33,7 @@ MONGODB_URI = <your mongoDB uri>
 Run the following command on your terminal -
 
 ```
+yarn install
 yarn dev
 ```
 
