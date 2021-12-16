@@ -21,6 +21,7 @@ function Create() {
   const [startTime, setStartTime] = useState(null);
   const [endTime, setEndTime] = useState(null);
   const [errors, setErrors] = useState([]);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const handleEmailsChange = (e) => {
     setEmails((prevEmails) => {
@@ -41,6 +42,8 @@ function Create() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    setIsDisabled(true);
+
     setErrors([]);
 
     // Sanity checks
@@ -49,6 +52,7 @@ function Create() {
         ...prevErrors,
         `You must provide atleast 2 candidate emails.`,
       ]);
+      setIsDisabled(false);
       return;
     }
 
@@ -58,6 +62,7 @@ function Create() {
           ...prevErrors,
           `${email} is not a valid email`,
         ]);
+        setIsDisabled(false);
         return;
       }
     }
@@ -66,6 +71,7 @@ function Create() {
         ...prevErrors,
         `End Time must be greater than start time.`,
       ]);
+      setIsDisabled(false);
       return;
     }
 
@@ -170,7 +176,8 @@ function Create() {
           </div>
           <button
             type="submit"
-            className="
+            disabled={isDisabled}
+            className={`
                   flex
                   mt-6
                   items-center
@@ -186,7 +193,8 @@ function Create() {
                   transition
                   duration-150
                   ease-in
-                "
+                  ${isDisabled ? 'opacity-50' : 'opacity-100'}
+                `}
           >
             <span className="mr-2 uppercase">Create</span>
           </button>
@@ -195,8 +203,8 @@ function Create() {
       <div className="bg-white shadow-xl rounded-xl p-4">
         <p className="font-bold text-xl text-red-500 mb-3 ">Please use following emails while creating interviews.</p>
       <ul className="list-none mb-4">
-        {users.map((u) => (
-          <li className="font-semibold mb-2">
+        {users.map((u, idx) => (
+          <li className="font-semibold mb-2" key={idx}>
             {u.name} -{" "}
             <span className="text-gray-500 font-normal">{u.email}</span>
           </li>
