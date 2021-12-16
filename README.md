@@ -2,7 +2,7 @@
 This is a full-stack demo app for interview schedules management system built on Next JS/tailwind + Next APIs. This app would let you create interviews of more than one person and would also notify you if any person in the group is unavailable in the entered slot 😎.
 You can also update a particular interview's time slot with above mentioned validation. 
 
-Check it out here 👉🔗  : [LINK}(https://the-scheduler.vercel.app/)
+Check it out here 👉🔗  : [LINK](https://the-scheduler.vercel.app/)
 
 ## Pages
 
