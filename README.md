@@ -10,7 +10,7 @@ You can also update a particular interview's time slot with above mentioned vali
 /update/[id] - update an interview schedule
 ```
 
-![interviews-page](https://user-images.githubusercontent.com/57484457/146258210-6e583ff3-c098-4934-a7bc-41dee6d201a5.png)
+![interviews-page](https://user-images.githubusercontent.com/57484457/146367740-d320cf87-6125-42e8-9c79-88055adca337.png)
 
 ![create](https://user-images.githubusercontent.com/57484457/146258222-f6a1f915-6f1b-4946-8f16-cec4dfb583e5.png) 
 
