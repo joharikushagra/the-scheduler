@@ -10,6 +10,7 @@ function Update(props) {
   const [startTime, setStartTime] = useState();
   const [endTime, setEndTime] = useState();
   const [errors, setErrors] = useState([]);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const handleStartTimeChange = (e) => {
     const dt = new Date(e.target.value);
@@ -24,6 +25,8 @@ function Update(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    setIsDisabled(true);
+
     setErrors([]);
 
     if (endTime - startTime <= 0) {
@@ -31,6 +34,7 @@ function Update(props) {
         ...prevErrors,
         `End Time must be greater than start time.`,
       ]);
+      setIsDisabled(false);
       return;
     }
 
@@ -117,7 +121,8 @@ function Update(props) {
           </div>
           <button
             type="submit"
-            className="
+            disabled={isDisabled}
+            className={`
                   flex
                   mt-6
                   items-center
@@ -133,7 +138,8 @@ function Update(props) {
                   transition
                   duration-150
                   ease-in
-                "
+                  ${isDisabled ? 'opacity-50' : 'opacity-100'}
+                `}
           >
             <span className="mr-2 uppercase">Update</span>
           </button>
