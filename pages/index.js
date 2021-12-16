@@ -8,6 +8,7 @@ export default function Home() {
     const res = await fetch("/api");
     const result = await res.json();
     const data = result.data;
+    console.log(data);
     setData(data);
   }, []);
 
@@ -34,17 +35,18 @@ export default function Home() {
                         >
                           #
                         </th>
-                        {/* <th
-                          scope="col"
-                          className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                        >
-                          Candidate
-                        </th> */}
+                      
                         <th
                           scope="col"
                           className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
                           Date
+                        </th>
+                        <th
+                          scope="col"
+                          className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        >
+                          Candidates
                         </th>
                         <th
                           scope="col"
@@ -74,12 +76,17 @@ export default function Home() {
                               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                 {index + 1}
                               </td>
-                              {/* <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                {d.candidate}
-                              </td> */}
+  
                               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                 {new Date(d.startTime).toLocaleDateString()}
                               </td>
+
+                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                {d.users.map((user) => {
+                                  return <strong><p>{user.email}</p></strong>
+                                })}
+                              </td>
+
                               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                 {new Date(d.startTime).toLocaleTimeString()}
                               </td>
@@ -131,4 +138,3 @@ export default function Home() {
     </div>
   );
 }
-
