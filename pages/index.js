@@ -9,7 +9,6 @@ export default function Home() {
     const result = await res.json();
     const data = result.data;
     setData(data);
-    console.log(data);
   }, []);
 
   return (
