@@ -6,17 +6,18 @@ You can also update a particular interview's time slot with above mentioned vali
 
 ```
 / - all interviews page
-```
-![interviews-page](https://user-images.githubusercontent.com/57484457/146258210-6e583ff3-c098-4934-a7bc-41dee6d201a5.png)
-
-```
 /create - create a new interview schedule
-```
-![create](https://user-images.githubusercontent.com/57484457/146258222-f6a1f915-6f1b-4946-8f16-cec4dfb583e5.png)
-
-```
 /update/[id] - update an interview schedule
 ```
+
+![interviews-page](https://user-images.githubusercontent.com/57484457/146258210-6e583ff3-c098-4934-a7bc-41dee6d201a5.png)
+
+![create](https://user-images.githubusercontent.com/57484457/146258222-f6a1f915-6f1b-4946-8f16-cec4dfb583e5.png) 
+
+![error1](https://user-images.githubusercontent.com/57484457/146333112-babcd52c-97e8-46a8-8064-75ad384c80ac.png)
+
+![error2](https://user-images.githubusercontent.com/57484457/146333118-c0492cbc-96c7-42d4-8a79-01896c8c21e7.png)
+
 ![update](https://user-images.githubusercontent.com/57484457/146258235-a162672e-fd89-43eb-ae65-b912eff55568.png)
 
 
