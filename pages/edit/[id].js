@@ -61,7 +61,7 @@ function Update(props) {
   };
 
   return (
-    <div className="flex flex-col justify-center w-screen items-center">
+    <div className="flex flex-col justify-center w-screen items-center px-2">
       <form onSubmit={handleSubmit}>
         <div className="py-12 w-96">
           <h2 className="text-2xl font-bold">
@@ -100,7 +100,7 @@ function Update(props) {
                 <span className="text-gray-700">End time</span>
                 <input
                   type="datetime-local"
-                  required="true"
+                  required={true}
                   onChange={handleEndTimeChange}
                   className="
                     mt-1

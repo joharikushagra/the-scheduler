@@ -8,6 +8,14 @@ const validateEmail = (email) => {
     );
 };
 
+const users = [
+  { email: 'kushagra@gmail.com', name: 'Kushagra Johari'},
+  { email: 'john@gmail.com', name: 'John Cena'},
+  { email: 'praveen@gmail.com', name: 'Praveen'},
+  { email: 'deepak@gmail.com', name: 'Deepak'},
+  { email: 'johndoe@gmail.com', name: 'John Doe'},
+]
+
 function Create() {
   const [emails, setEmails] = useState([]);
   const [startTime, setStartTime] = useState(null);
@@ -88,7 +96,7 @@ function Create() {
   };
 
   return (
-    <div className="flex flex-col justify-center w-screen items-center">
+    <div className="flex flex-col justify-center w-screen items-center px-2">
       <form onSubmit={handleSubmit}>
         <div className="py-12 w-96">
           <h2 className="text-2xl font-bold">Create Interview</h2>
@@ -184,6 +192,17 @@ function Create() {
           </button>
         </div>
       </form>
+      <div className="bg-white shadow-xl rounded-xl p-4">
+        <p className="font-bold text-xl text-red-500 mb-3 ">Please use following emails while creating interviews.</p>
+      <ul className="list-none mb-4">
+        {users.map((u) => (
+          <li className="font-semibold mb-2">
+            {u.name} -{" "}
+            <span className="text-gray-500 font-normal">{u.email}</span>
+          </li>
+        ))}
+      </ul>
+      </div>
     </div>
   );
 }
