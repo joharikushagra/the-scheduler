@@ -13,13 +13,10 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Head>
-        <title>The Scheduler</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main className="flex flex-col items-center justify-center w-full flex-1 px-2 text-center">
-        <h1 className="text-4xl mb-4 mt-6 font-bold">All Upcoming interviews</h1>
+        <h1 className="text-4xl mb-4 mt-6 font-bold">
+          All Upcoming interviews
+        </h1>
         <div className="py- w-36">
           <Link href="/create">
             <button
@@ -57,15 +54,21 @@ export default function Home() {
                           <div className="mt-3 text-left sm:mt-5">
                             <p className="mb-2 text-md font-semibold tracking-widest text-blue-600 uppercase">
                               Interview Date:{" "}
-                              <span className="text-gray-500 font-normal ">{new Date(d.startTime).toLocaleDateString()}</span>
+                              <span className="text-gray-500 font-normal ">
+                                {new Date(d.startTime).toLocaleDateString()}
+                              </span>
                             </p>
                             <p className="mb-2 text-xs font-semibold tracking-widest text-blue-600 uppercase">
                               Start Time:{" "}
-                              <span className="text-gray-500 font-normal">{new Date(d.startTime).toLocaleTimeString()}</span>
-                              </p>
-                              <p className="mb-2 text-xs font-semibold tracking-widest text-blue-600 uppercase">
+                              <span className="text-gray-500 font-normal">
+                                {new Date(d.startTime).toLocaleTimeString()}
+                              </span>
+                            </p>
+                            <p className="mb-2 text-xs font-semibold tracking-widest text-blue-600 uppercase">
                               End Time:{" "}
-                              <span className="text-gray-500 font-normal">{new Date(d.endTime).toLocaleTimeString()}</span>
+                              <span className="text-gray-500 font-normal">
+                                {new Date(d.endTime).toLocaleTimeString()}
+                              </span>
                             </p>
                             <div className="mt-2">
                               <p className="text-md text-gray-600 font-semibold my-3">
@@ -85,12 +88,12 @@ export default function Home() {
                           </div>
                         </div>
                         <Link href={`/edit/${d._id}`}>
-                        <button
-                          className="items-centerblock px-10 py-4 text-base font-medium text-center text-white transition
+                          <button
+                            className="items-centerblock px-10 py-4 text-base font-medium text-center text-white transition
                                   duration-500 ease-in-out transform bg-blue-600 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                        >
-                          Update
-                        </button>
+                          >
+                            Update
+                          </button>
                         </Link>
                       </div>
                     </div>
