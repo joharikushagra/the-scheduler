@@ -39,7 +39,7 @@ function Create() {
     if (emails.length < 2) {
       setErrors((prevErrors) => [
         ...prevErrors,
-        `You must provide atleast 2 candiate emails.`,
+        `You must provide atleast 2 candidate emails.`,
       ]);
       return;
     }
